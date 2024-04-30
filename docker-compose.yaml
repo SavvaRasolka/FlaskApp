@@ -1,0 +1,15 @@
+services:
+  database:
+    image: mongo
+    restart: always
+
+  app:
+    env_file: .env
+    build: .
+    container_name: flask_app
+    restart: on-failure
+    ports:
+      - "$FLASK_RUN_PORT:$FLASK_RUN_PORT"
+    depends_on:
+      - database
+
