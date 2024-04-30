@@ -1,6 +1,6 @@
 # Flask App
 
-This is test app with simple REST API implementation.
+This is test app with simple REST API implementation. App using MongoDB.
 
 ## Install
 
@@ -43,3 +43,21 @@ Follow these steps to set up Docker and Docker Compose for your project.
    ```bash
    docker-compose up
    ```
+
+## Endpoints
+
+### GET /products
+
+This request is used to retrieve all objects. Server will respond with list of objects.
+
+### POST /products
+
+This request is used to post object. Requests body should have an object as json. The object will be added if there are no same keys. Return status 400 if such key is present.
+
+### GET /products/<key>
+
+This request is used to retrieve object with <key>. Returns empty list if there is no such key.
+
+### PUT /products/<key>
+
+This request is used to put object with <key>. Returns status 400 if there is no <key> or there is object with key, that same as key in object from requests body. Requests body should have an object as json.
