@@ -1,0 +1,8 @@
+.pytest_cache
+test/__pycache__
+test/.pytest_cache
+app/__pycache__
+.idea
+flask.log
+.env
+venv
